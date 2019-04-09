@@ -3,3 +3,5 @@ insert into Previsao(id, dia_semana, temperatura_min, temperatura_max, humidade_
 insert into Previsao(id, dia_semana, temperatura_min, temperatura_max, humidade_ar, descricao) values (3, 'Quarta', 9.2, 8.9, 9.96, '');
 insert into Previsao(id, dia_semana, temperatura_min, temperatura_max, humidade_ar, descricao) values (4, 'Quinta', 8.1, 6.6, 9.88, '');
 insert into Previsao(id, dia_semana, temperatura_min, temperatura_max, humidade_ar, descricao) values (5, 'Sexta', 2.4, 8.4, 0.88, '');
+
+insert into Usuario(id, login, senha) values (1, 'root', 'root');

@@ -8,13 +8,34 @@ public class Previsao implements Serializable {
     private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue
-	private long id;
+	private Long id;
 	private String diaSemana;
 	private Double temperaturaMin;
 	private Double temperaturaMax;
 	private Double humidadeAr;
 	private String descricao;
+	private String dataHora;
+	private String latitute;
+	private String longitude;
 	
+	public String getDataHora() {
+		return dataHora;
+	}
+	public void setDataHora(String dataHora) {
+		this.dataHora = dataHora;
+	}
+	public String getLatitute() {
+		return latitute;
+	}
+	public void setLatitute(String latitute) {
+		this.latitute = latitute;
+	}
+	public String getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
 	public long getId() {
 		return id;
 	}
