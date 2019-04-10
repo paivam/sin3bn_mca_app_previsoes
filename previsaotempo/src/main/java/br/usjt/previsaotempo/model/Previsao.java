@@ -18,6 +18,10 @@ public class Previsao implements Serializable {
 	private String latitute;
 	private String longitude;
 	
+	@OneToOne
+	@JoinColumn(name ="id_do_meu_dia")
+	private DiaSemana diaSem;
+	
 	public String getDataHora() {
 		return dataHora;
 	}

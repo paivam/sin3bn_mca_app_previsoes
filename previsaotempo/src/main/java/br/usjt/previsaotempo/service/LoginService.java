@@ -10,7 +10,7 @@ import br.usjt.previsaotempo.repository.UsuarioRepository;
 public class LoginService {
 
 	@Autowired
-	UsuarioRepository usuRepo;
+	private UsuarioRepository usuRepo;
 	
 	public boolean logar(Usuario usuario) {
 		return usuRepo.findOneByLoginAndSenha(usuario.getLogin(), usuario.getSenha() != null);
