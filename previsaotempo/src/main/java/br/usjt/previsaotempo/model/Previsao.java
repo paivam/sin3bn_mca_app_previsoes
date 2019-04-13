@@ -3,6 +3,7 @@ package br.usjt.previsaotempo.model;
 import java.io.Serializable;
 import javax.persistence.*;
 
+
 @Entity
 public class Previsao implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -15,12 +16,15 @@ public class Previsao implements Serializable {
 	private Double humidadeAr;
 	private String descricao;
 	private String dataHora;
-	private String latitute;
-	private String longitude;
 	
 	@OneToOne
 	@JoinColumn(name ="id_do_meu_dia")
 	private DiaSemana diaSem;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_da_minha_cidade")
+	private Cidade cidade;
+	
 	
 	public String getDataHora() {
 		return dataHora;
@@ -28,18 +32,7 @@ public class Previsao implements Serializable {
 	public void setDataHora(String dataHora) {
 		this.dataHora = dataHora;
 	}
-	public String getLatitute() {
-		return latitute;
-	}
-	public void setLatitute(String latitute) {
-		this.latitute = latitute;
-	}
-	public String getLongitude() {
-		return longitude;
-	}
-	public void setLongitude(String longitude) {
-		this.longitude = longitude;
-	}
+
 	public long getId() {
 		return id;
 	}
@@ -75,6 +68,36 @@ public class Previsao implements Serializable {
 	}
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Previsao other = (Previsao) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+	}
+	@Override
+	public String toString() {
+		return "Previsao [id=" + id + ", diaSemana=" + diaSemana + ", temperaturaMin=" + temperaturaMin
+				+ ", temperaturaMax=" + temperaturaMax + ", humidadeAr=" + humidadeAr + ", descricao=" + descricao
+				+ ", dataHora=" + dataHora + ", latitute="  + ", diaSem="
+				+ diaSem + "]";
 	}
 	
 	

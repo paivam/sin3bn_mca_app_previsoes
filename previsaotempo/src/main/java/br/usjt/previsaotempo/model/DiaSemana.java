@@ -73,5 +73,10 @@ public class DiaSemana implements Serializable {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "DiaSemana [id=" + id + ", nomeDiaSem=" + nomeDiaSem + "]";
+	}
+
 	
 }
