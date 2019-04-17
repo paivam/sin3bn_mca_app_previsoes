@@ -13,6 +13,6 @@ public class LoginService {
 	private UsuarioRepository usuRepo;
 	
 	public boolean logar(Usuario usuario) {
-		return usuRepo.findOneByLoginAndSenha(usuario.getLogin(), usuario.getSenha() != null);
+		return usuRepo.findOneByLoginAndSenha(usuario.getLogin(), usuario.getSenha())  != null;
 	}
 }	
